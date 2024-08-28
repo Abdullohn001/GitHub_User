@@ -50,10 +50,11 @@ searchBtn.addEventListener("click", async () => {
       const year = req.created_at.slice(0, 4);
       const month = req.created_at.slice(5, 7);
       const date = req.created_at.slice(8, 10);
-      console.log(req);
+
+      document.querySelector(".noResult").style.display = "none";
 
       if (req.message === "Not Found") {
-        document.querySelector(".noResult").style.display = "block";
+        console.log(req.message);
       } else {
         document.getElementById("userImg").src = `${req.avatar_url}`;
         document.getElementById("userName").textContent = req.name
@@ -95,6 +96,7 @@ searchBtn.addEventListener("click", async () => {
       inputValue.value = "";
     })
     .catch((error) => {
+      document.querySelector(".noResult").style.display = "block";
       console.log(error);
     });
 });
