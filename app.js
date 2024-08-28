@@ -59,7 +59,7 @@ searchBtn.addEventListener("click", async () => {
         document.getElementById("userImg").src = `${req.avatar_url}`;
         document.getElementById("userName").textContent = req.name
           ? `${req.name}`
-          : "Unknown!";
+          : "No Name !";
         document.getElementById(
           "createDate"
         ).textContent = `Joined ${date}.${month}.${year}`;
